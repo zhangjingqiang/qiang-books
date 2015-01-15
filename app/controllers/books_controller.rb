@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   respond_to :html
 
   def index
-    @books = Book.all.order('created_at DESC').paginate(:page => params[:page])
+    @books = Book.all.order('name').paginate(:page => params[:page])
     respond_with(@books)
   end
 
