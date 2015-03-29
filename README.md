@@ -11,7 +11,7 @@ The books I have read.
 # Installation
 
 ```ruby
-rake db:migrate
+rake db:migrate db:seed_fu
 rails console
 Admin.create!({ :email => '...', :password => '...', :password_confirmation => '...' })
 ```

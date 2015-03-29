@@ -23,6 +23,13 @@
     <%= error_span(@book[:name]) %>
   </div>
 
+  <div class="control-group">
+    <%= f.label :category_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :category_id, Category.all.map{|t| [t.name, t.id]}, :class => 'control-label' %>
+    </div>
+    <%= error_span(@book[:category_id]) %>
+  </div>
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

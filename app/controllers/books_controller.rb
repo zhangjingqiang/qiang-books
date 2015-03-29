@@ -36,13 +36,13 @@ class BooksController < ApplicationController
     @book.destroy
     respond_with(@book)
   end
-
+  
   private
     def set_book
       @book = Book.find(params[:id])
     end
 
     def book_params
-      params.require(:book).permit(:name)
+      params.require(:book).permit(:name, :category_id)
     end
 end

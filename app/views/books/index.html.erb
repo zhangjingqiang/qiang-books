@@ -1,12 +1,1 @@
-<% @books.each do |book| %>
-  <div class="alert alert-info">
-    <%= book.name %>
-    <% if admin_signed_in? %>
-    <div class="text-right">
-      <%= link_to 'Edit', edit_book_path(book), :class => "btn btn-success" %>
-      <%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
-    </div>
-    <% end %>
-  </div>
-<% end %>
-<%= will_paginate @books, renderer: BootstrapPagination::Rails %>
+<%= render 'list' %>
