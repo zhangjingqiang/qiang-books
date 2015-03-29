@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :admins
   resources :books
-  get "categories/:id", to: "categories#index", as: "category"
+  resources :categories, only: :show
+  
+  devise_for :admins
+  devise_scope :admin do
+    get 'admin', :to => 'devise/sessions#new'
+  end
   
   root 'books#index'
 end

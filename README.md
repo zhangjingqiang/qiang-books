@@ -11,6 +11,8 @@ The books I have read.
 # Installation
 
 ```ruby
+heroku config:set EMAIL=[...]
+heroku config:set ABOUT_ME=[...]
 rake db:migrate db:seed_fu
 rails console
 Admin.create!({ :email => '...', :password => '...', :password_confirmation => '...' })
