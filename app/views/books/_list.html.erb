@@ -1,6 +1,8 @@
 <% @books.each do |book| %>
   <div class="alert alert-info">
     <%= book.name %>
+    <hr>
+    <%= link_to category_name(book.category_id), category_path(category_name(book.category_id)) %>
     <% if admin_signed_in? %>
     <div class="text-right">
       <%= link_to 'Edit', edit_book_path(book), :class => "btn btn-success" %>
