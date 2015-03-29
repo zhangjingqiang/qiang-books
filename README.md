@@ -13,8 +13,8 @@ The books I have read.
 ```ruby
 heroku config:set EMAIL=[...]
 heroku config:set ABOUT_ME=[...]
-rake db:migrate db:seed_fu
-rails console
+heroku run rake db:migrate db:seed_fu
+heroku run rails console
 Admin.create!({ :email => '...', :password => '...', :password_confirmation => '...' })
 ```
 
