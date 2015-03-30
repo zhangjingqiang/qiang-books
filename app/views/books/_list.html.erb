@@ -1,14 +1,15 @@
 <% @books.each do |book| %>
   <div class="alert alert-info">
-    <%= book.name %>
+    <div style="float: left;"><%= book.name %></div>
+    <% if admin_signed_in? %>
+      <div class="text-right">
+        <%= link_to 'Edit', edit_book_path(book), :class => "btn btn-success" %>
+        <%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+      </div>
+    <% end %>
+    <div style="clear: both;"></div>
     <hr>
     <%= link_to category_name(book.category_id), category_path(category_name(book.category_id)) %>
-    <% if admin_signed_in? %>
-    <div class="text-right">
-      <%= link_to 'Edit', edit_book_path(book), :class => "btn btn-success" %>
-      <%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
-    </div>
-    <% end %>
   </div>
 <% end %>
 <%= will_paginate @books, renderer: BootstrapPagination::Rails %>
