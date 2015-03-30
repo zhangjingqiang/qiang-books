@@ -3,8 +3,8 @@
     <div style="float: left;"><%= book.name %></div>
     <% if admin_signed_in? %>
       <div class="text-right">
-        <%= link_to 'Edit', edit_book_path(book), :class => "btn btn-success" %>
-        <%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+        <%= link_to 'Edit', edit_book_path(book), :class => "btn btn-success btn-xs" %>
+        <%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %>
       </div>
     <% end %>
     <div style="clear: both;"></div>
